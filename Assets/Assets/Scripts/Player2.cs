@@ -20,12 +20,12 @@ public class Player2 : MonoBehaviour
 	{
 		float directionY = Input.GetAxisRaw("Vertical");
 	    
-		racketDirection = new Vector2(0,directionY).normalized;
+		racketDirection = new Vector2(0f,directionY).normalized;
 	}
     
 	void FixedUpdate()
 	{
-		rb2D.velocity = racketDirection * racketSpeed * Time.fixedDeltaTime;
+		rb2D.velocity = new Vector2(0f, racketDirection.y * racketSpeed);
 	}
 	
 }
